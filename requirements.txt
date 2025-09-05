@@ -1,0 +1,11 @@
+# Core dependencies for PortSpy
+# Most functionality uses built-in libraries (socket, threading, etc.)
+
+# Optional: For colored terminal output (makes results prettier)
+colorama==0.4.6
+
+# Optional: For better argument parsing (if you want advanced CLI features)
+argparse
+
+# Optional: For progress bars during scanning
+tqdm==4.66.1

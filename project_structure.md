@@ -16,8 +16,4 @@ PortSpy/
 └── README.md              # Updated documentation
 ```
 
-This modular approach will help you:
-- Separate concerns (each file has a specific purpose)
-- Make testing easier
-- Keep code organized and maintainable
-- Demonstrate professional coding practices
+
