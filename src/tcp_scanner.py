@@ -269,4 +269,4 @@ def format_scan_results(target: str, results: List[Dict[str, any]],
     return "\n".join(report_lines)
 
 
-# TODO: You'll implement these functions step by step
+
