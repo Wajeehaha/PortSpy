@@ -1,16 +1,3 @@
-#!/usr/bin/env python3
-"""
-PortSpy - TCP Port Scanner
-
-A simple, educational TCP port scanner that demonstrates
-networking concepts and socket programming in Python.
-
-Enhanced with colorful output and progress bars for better UX.
-
-Author: [Your Name]  
-Date: September 6, 2025
-"""
-
 import argparse
 import time
 from typing import List

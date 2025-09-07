@@ -12,32 +12,7 @@ init(autoreset=True)
 
 
 def tcp_scan_port(ip: str, port: int, timeout: float = 2.0) -> Dict[str, any]:
-    """
-    Scan a single port using TCP connect scan.
-    
-    Args:
-        ip (str): Target IP address
-        port (int): Port number to scan
-        timeout (float): Connection timeout in seconds
-        
-    Returns:
-        Dict: Scan result with port info and status
-        
-    Examples:
-        >>> tcp_scan_port("127.0.0.1", 80)
-        {'port': 80, 'status': 'open', 'service': 'HTTP', 'response_time': 0.05}
-        
-        >>> tcp_scan_port("127.0.0.1", 99999)
-        {'port': 99999, 'status': 'closed', 'service': 'Unknown', 'response_time': 2.0}
-        
-    Learning points:
-        - socket.socket() creates a TCP socket
-        - socket.settimeout() prevents hanging connections
-        - socket.connect() attempts TCP connection
-        - Connection success = open port
-        - Connection refused = closed port
-        - Timeout = filtered port (firewall)
-    """
+   
     # Record start time for performance measurement
     start_time = time.time()
     
@@ -50,24 +25,24 @@ def tcp_scan_port(ip: str, port: int, timeout: float = 2.0) -> Dict[str, any]:
     }
     
     try:
-        # Step 1: Create TCP socket
+       
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         
-        # Step 2: Set timeout to prevent hanging
+       
         sock.settimeout(timeout)
         
-        # Step 3: Attempt TCP connection
+       
         connection_result = sock.connect((ip, port))
         
-        # If we reach here, connection was successful
+       
         result['status'] = 'open'
         
     except socket.timeout:
-        # Connection timed out - likely filtered by firewall
+       
         result['status'] = 'filtered'
         
     except ConnectionRefusedError:
-        # Connection actively refused - port is closed
+       
         result['status'] = 'closed'
         
     except OSError as e:
